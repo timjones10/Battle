@@ -1,15 +1,15 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new('Liv', 'Tim') }
+  subject(:game) { described_class.new('Lucas', 'Tim') }
 
-  subject(:liv) { Player.new('Liv') }
+  subject(:lucas) { Player.new('Lucas') }
   subject(:tim) { Player.new('Tim') }
 
   describe 'attack' do
     it 'damages the player' do
-      expect(liv).to receive(:receive_damage)
-      game.attack(liv)
+      expect(lucas).to receive(:receive_damage)
+      game.attack(lucas)
     end
   end
 
@@ -25,5 +25,17 @@ describe Game do
     it 'creates the second player' do
       expect(game.player2).to eq player2
     end
+
+    it 'allocates the next_turn to a player' do
+    expect(game.current_turn).to eq player1
+    end
+
+    describe '#switch_turns' do
+      it 'switches the turn' do
+        game.switch_turns
+        expect(game.current_turn).to eq player2
+      end
+    end
+
   end
 end

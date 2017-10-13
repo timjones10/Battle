@@ -1,3 +1,4 @@
+require 'spec_helper'
 
 feature "Attack" do
   scenario "player 1's attack reduces player 2's hit points" do

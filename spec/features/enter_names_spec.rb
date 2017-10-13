@@ -3,6 +3,6 @@
 feature "Players" do
   scenario "fill in details" do
     sign_in_and_play
-    expect(page).to have_content "Liv vs. Tim"
+    expect(page).to have_content "Lucas vs. Tim"
   end
 end
